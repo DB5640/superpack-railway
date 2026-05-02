@@ -1,0 +1,80 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "WSL Chrome Debug",
+            "type": "process",
+            "command": "/mnt/c/Program Files/Google/Chrome/Application/chrome.exe",
+            "args": [
+                "--remote-debugging-port=9222",
+                "--user-data-dir=C:/chrome-debug",
+                "http://localhost:3000"
+            ],
+            "presentation": {
+                "echo": true,
+                "focus": true,
+                "panel": "dedicated"
+            },
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": "^$"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": ".",
+                    "endsPattern": "."
+                }
+            }
+        },
+        {
+            "label": "Start Convex Dev Server",
+            "type": "process",
+            "command": "npx",
+            "args": [
+                "convex",
+                "dev"
+            ],
+            "presentation": {
+                "echo": true,
+                "focus": true,
+                "panel": "dedicated"
+            },
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": "^$"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": ".",
+                    "endsPattern": "."
+                }
+            }
+        },
+        {
+            "label": "Start React Dev Server",
+            "type": "process",
+            "command": "npm",
+            "args": [
+                "run",
+                "dev"
+            ],
+            "presentation": {
+                "echo": true,
+                "focus": true,
+                "panel": "dedicated"
+            },
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": "^$"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": ".",
+                    "endsPattern": "."
+                }
+            }
+        }
+    ]
+}

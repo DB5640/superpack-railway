@@ -11,3 +11,8 @@ dist-ssr
 .vinxi
 __unconfig*
 todos.json
+.env.*
+!.env.example
+.agents
+.claude
+skills-lock.json
