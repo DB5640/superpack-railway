@@ -1,0 +1,10 @@
+#!/bin/sh
+# Husky pre-push hook: bloquea el push si hay 'TODOS:' en el código fuente
+
+pnpm build
+
+# Buscar 'TODOS:' en archivos fuente (excluyendo node_modules y .git)
+if git grep -n --no-ignore-case 'TODOS:' -- src/; then
+	echo "\033[0;31mERROR: Se encontró 'TODOS:' en el código. El push ha sido bloqueado.\033[0m"
+	exit 1
+fi

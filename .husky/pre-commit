@@ -1,0 +1,7 @@
+
+#!/bin/sh
+# Husky pre-commit hook: ejecuta biome para linting y chequeos de errores
+
+# Lint y check de errores con biome
+pnpm exec biome lint --staged --write --diagnostic-level=error --no-errors-on-unmatched
+# pnpm exec biome check . --write
